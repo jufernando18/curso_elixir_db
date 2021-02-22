@@ -1,0 +1,38 @@
+<h1>Show Accounts</h1>
+
+<ul>
+
+  <li>
+    <strong>Type document:</strong>
+    <%= @accounts.type_document %>
+  </li>
+
+  <li>
+    <strong>Num document:</strong>
+    <%= @accounts.num_document %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @accounts.email %>
+  </li>
+
+  <li>
+    <strong>Name company:</strong>
+    <%= @accounts.name_company %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @accounts.name %>
+  </li>
+
+  <li>
+    <strong>Last name:</strong>
+    <%= @accounts.last_name %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.accounts_path(@conn, :edit, @accounts) %></span>
+<span><%= link "Back", to: Routes.accounts_path(@conn, :index) %></span>

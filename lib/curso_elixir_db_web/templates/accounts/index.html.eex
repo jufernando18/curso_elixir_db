@@ -1,0 +1,36 @@
+<h1>Listing Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type document</th>
+      <th>Num document</th>
+      <th>Email</th>
+      <th>Name company</th>
+      <th>Name</th>
+      <th>Last name</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for accounts <- @accounts do %>
+    <tr>
+      <td><%= accounts.type_document %></td>
+      <td><%= accounts.num_document %></td>
+      <td><%= accounts.email %></td>
+      <td><%= accounts.name_company %></td>
+      <td><%= accounts.name %></td>
+      <td><%= accounts.last_name %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.accounts_path(@conn, :show, accounts) %></span>
+        <span><%= link "Edit", to: Routes.accounts_path(@conn, :edit, accounts) %></span>
+        <span><%= link "Delete", to: Routes.accounts_path(@conn, :delete, accounts), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Accounts", to: Routes.accounts_path(@conn, :new) %></span>

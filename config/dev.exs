@@ -5,7 +5,7 @@ config :curso_elixir_db, CursoElixirDb.Repo,
   username: "postgres",
   password: "postgres",
   database: "curso_elixir_db_dev",
-  hostname: "172.30.108.212",
+  hostname: "192.168.104.39",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10
 

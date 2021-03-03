@@ -1,0 +1,28 @@
+<h1>Show Topics</h1>
+
+<ul>
+
+  <li>
+    <strong>Title:</strong>
+    <%= @topics.title %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @topics.description %>
+  </li>
+
+  <li>
+    <strong>Score:</strong>
+    <%= @topics.score %>
+  </li>
+
+  <li>
+    <strong>Gradient:</strong>
+    <%= @topics.gradient %>
+  </li>
+
+</ul>
+
+<span><%= link "Edit", to: Routes.topics_path(@conn, :edit, @topics) %></span>
+<span><%= link "Back", to: Routes.topics_path(@conn, :index) %></span>

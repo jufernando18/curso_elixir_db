@@ -1,0 +1,32 @@
+<h1>Listing Topics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Score</th>
+      <th>Gradient</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for topics <- @topics do %>
+    <tr>
+      <td><%= topics.title %></td>
+      <td><%= topics.description %></td>
+      <td><%= topics.score %></td>
+      <td><%= topics.gradient %></td>
+
+      <td>
+        <span><%= link "Show", to: Routes.topics_path(@conn, :show, topics) %></span>
+        <span><%= link "Edit", to: Routes.topics_path(@conn, :edit, topics) %></span>
+        <span><%= link "Delete", to: Routes.topics_path(@conn, :delete, topics), method: :delete, data: [confirm: "Are you sure?"] %></span>
+      </td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<span><%= link "New Topics", to: Routes.topics_path(@conn, :new) %></span>

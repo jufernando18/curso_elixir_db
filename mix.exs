@@ -20,7 +20,7 @@ defmodule CursoElixirDb.MixProject do
   def application do
     [
       mod: {CursoElixirDb.Application, []},
-      extra_applications: [:logger, :runtime_tools]
+      extra_applications: [:logger, :runtime_tools, :httpoison]
     ]
   end
 
@@ -46,7 +46,9 @@ defmodule CursoElixirDb.MixProject do
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
       {:quantum, "~> 3.0"},
-      {:floki, "~> 0.30.0"}
+      {:floki, "~> 0.30.0"},
+      {:httpoison, "~> 1.8"},
+      {:poison, "~> 3.1"}
     ]
   end
 

@@ -9,7 +9,7 @@ config :curso_elixir_db, CursoElixirDb.Repo,
   username: "postgres",
   password: "postgres",
   database: "curso_elixir_db_test#{System.get_env("MIX_TEST_PARTITION")}",
-  hostname: "192.168.104.39",
+  hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,

@@ -17,7 +17,8 @@ defmodule CursoElixirDb.Application do
       CursoElixirDbWeb.Endpoint,
       # Start a worker by calling: CursoElixirDb.Worker.start_link(arg)
       # {CursoElixirDb.Worker, arg}
-      CursoElixirDb.Cron
+      CursoElixirDb.Cron,
+      {CursoElixirDb.Registry, name: CursoElixirDb.Registry}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html

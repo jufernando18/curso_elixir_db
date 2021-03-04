@@ -16,7 +16,7 @@ config :curso_elixir_db, CursoElixirDbWeb.Endpoint,
   secret_key_base: "zbf1dlsge7CQWc3wqoXjofEkMGTY8JqBA4Kuclly4ShMobBKLP7BV/KOjk3fPEEK",
   render_errors: [view: CursoElixirDbWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: CursoElixirDb.PubSub,
-  live_view: [signing_salt: "PS8/CudG"]
+  live_view: [signing_salt: "00Bsnw5ll9QprdCZsh6v8iaJJoFJXqAA"]
 
 config :curso_elixir_db, CursoElixirDb.Cron,
   jobs: [
@@ -27,7 +27,7 @@ config :curso_elixir_db, CursoElixirDb.Cron,
       #task: fn -> Exercises9.print_count() end
     #]
     #{{:extended, "* * * * *"}, fn -> Exercises9.print_count() end}
-    {{:extended, "*/5 * * * *"}, fn ->CursoElixirDb.Exercises.Class11.save_relevant_info_from_view() end}
+    {{:extended, "*/10 * * * *"}, fn ->CursoElixirDb.Exercises.Class11.save_relevant_info_from_view() end}
   ]
 
 config :logger, level: :debug

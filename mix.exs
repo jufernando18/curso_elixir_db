@@ -48,7 +48,8 @@ defmodule CursoElixirDb.MixProject do
       {:quantum, "~> 3.0"},
       {:floki, "~> 0.30.0"},
       {:httpoison, "~> 1.8"},
-      {:poison, "~> 3.1"}
+      {:poison, "~> 3.1"},
+      {:phoenix_live_view, "~> 0.15.4"}
     ]
   end
 

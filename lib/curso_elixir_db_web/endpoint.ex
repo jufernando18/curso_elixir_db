@@ -7,7 +7,7 @@ defmodule CursoElixirDbWeb.Endpoint do
   @session_options [
     store: :cookie,
     key: "_curso_elixir_db_key",
-    signing_salt: "9SXxsu/A"
+    signing_salt: "00Bsnw5ll9QprdCZsh6v8iaJJoFJXqAA"
   ]
 
   socket "/socket", CursoElixirDbWeb.UserSocket,

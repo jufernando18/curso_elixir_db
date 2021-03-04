@@ -1,4 +1,5 @@
 defmodule CursoElixirDb.Exercises.Class11 do
+  alias CursoElixirDb.Registry
 
   defp consumer(url, callback) do
     case HTTPoison.get(url) do
@@ -20,7 +21,7 @@ defmodule CursoElixirDb.Exercises.Class11 do
       titles = for {_, _, [title]} <- Floki.find(nodes, "div.tileKeyword"), do: title
       descriptions = for {_, _, [description]} <- Floki.find(nodes, "div.tileDescription"), do: description
       {scores, gradients} = obtain_scores_and_gradients(nodes)
-      for card <- List.zip([titles, descriptions, scores, gradients]), do: persist_card_info(card)
+      Registry.create_all(Registry, List.zip([titles, descriptions, scores, gradients]))
     end
   end
 
@@ -36,12 +37,4 @@ defmodule CursoElixirDb.Exercises.Class11 do
     {scores, gradients}
   end
 
-  defp persist_card_info({title, description, score, gradient}) do
-    import CursoElixirDb.HelperTopics
-    current = %{title: title, description: description, score: score, gradient: gradient}
-    case get_topics_by(%{title: title}) do
-      nil -> create_topics(current)
-      old -> update_topics(old, current)
-    end
-  end
 end

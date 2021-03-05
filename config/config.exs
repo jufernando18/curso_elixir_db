@@ -21,13 +21,13 @@ config :curso_elixir_db, CursoElixirDbWeb.Endpoint,
 config :curso_elixir_db, CursoElixirDb.Cron,
   jobs: [
     # Every second
-    #insert: [
-    #  schedule: {:extended, "*/5 * * * *"},
-    #  task: {CursoElixirDb.Task, :insert_random, []}
+    insert: [
+      schedule: {:extended, "*/10 * * * *"},
+      task: {CursoElixirDb.Exercises.Class11, :save_relevant_info_from_view, []}
       #task: fn -> Exercises9.print_count() end
-    #]
+    ]
     #{{:extended, "* * * * *"}, fn -> Exercises9.print_count() end}
-    {{:extended, "*/10 * * * *"}, fn ->CursoElixirDb.Exercises.Class11.save_relevant_info_from_view() end}
+    #{ {:extended, "*/10 * * * *"}, fn -> CursoElixirDb.Exercises.Class11.save_relevant_info_from_view() end}
   ]
 
 config :logger, level: :debug

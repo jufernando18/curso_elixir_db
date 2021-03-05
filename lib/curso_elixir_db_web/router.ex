@@ -19,7 +19,9 @@ defmodule CursoElixirDbWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
-    live "/topic", TopicsLiveController
+    resources "/accounts", AccountsController
+    resources "/topics", TopicsController
+    live "/card", TopicsLiveController
   end
 
   # Other scopes may use custom stacks.

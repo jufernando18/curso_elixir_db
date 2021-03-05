@@ -55,4 +55,4 @@ jobs:
         host: ${{ secrets.HOST }}
         USERNAME: ${{ secrets.USERNAME }}
         KEY: ${{ secrets.SSHKEY }}
-        script: docker service update --image jufernando18/curso_elixir_db:${{ github.sha }} curso_elixir_db_app_app
+        script: docker service update --image jufernando18/curso_elixir_db:${{ github.sha }} curso_elixir_db_app

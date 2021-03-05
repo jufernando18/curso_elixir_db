@@ -44,3 +44,15 @@ jobs:
         name: jufernando18/curso_elixir_db:${{ github.sha }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+  deploy:
+    runs-on: ubuntu-18.04
+    needs: [test, publish]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Executing remote  command
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        KEY: ${{ secrets.SSHKEY }}
+        script: docker service update --image jufernando18/curso_elixir_db:${{ github.sha }} curso_elixir_db_app_app

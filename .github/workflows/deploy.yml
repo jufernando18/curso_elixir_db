@@ -38,7 +38,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Publish to DockerHub
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: jufernando18/curso_elixir_db:${{ github.sha }}
         username: ${{ secrets.DOCKER_USERNAME }}
